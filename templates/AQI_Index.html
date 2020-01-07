@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body align="center", style="background-color:powderblue;">
+	<form action="{{ url_for('predict')}}" method="post">
+		<h1 style="color:green;">AIR QUALITY INDEX PREDICTOR</h1><br>
+		<h2>Please Enter Below Details</h2><br>
+		T: <input type="text" name="avgtemp", placeholder="Average Temperature (°C)">
+		TM: <input type="text" name="maxtemp", placeholder="Maximum temperature (°C)">
+		Tm: <input type="text" name="mintemp", placeholder="Minimum temperature (°C)">
+		SLP: <input type="text" name="pressureatsea", placeholder="Atmospheric pressure at sea level"><br><br>
+	    H: <input type="text" name="avghumidity", placeholder="Average relative humidity (%)">
+		VV: <input type="text" name="avgvisib", placeholder="Average visibility (Km)">
+		V: <input type="text" name="avgwindspeed", placeholder="Average wind speed (Km/h)">
+		VM: <input type="text" name="maxwindspeed", placeholder="Max sustained wind speed (Km/h)"><br><br>
+		<input type="submit" value="Get AQI" style="background-color:green; border-color:white; width: 150px; height: 25px;">
+		<input type="reset" value="Reset" style="background-color:green; border-color:white; width: 150px; height: 25px;">
+	</form>
+		<br>
+			<br>
+	{{ prediction_text }}
+</body>
+</html>
